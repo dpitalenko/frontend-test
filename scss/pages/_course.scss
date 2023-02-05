@@ -1,0 +1,167 @@
+@import "../base/typography";
+@import "../abstracts/mixins";
+
+.courses {
+  padding: 60px 0;
+  background: $gray-bgcolor;
+}
+
+.programmes {
+  @include display(flex, flex-start, flex-start)
+}
+
+.title {
+  margin: 0 0 36px;
+  font-family: $title-font;
+  font-weight: 400;
+  font-size: 30px;
+  color: $title-color;
+}
+
+.card {
+  @include display(flex, space-between, center);
+  flex-wrap: wrap;
+
+  .card__item {
+    margin-left: 15px;
+    margin-bottom: 20px;
+    padding: 24px 30px 30px;
+    width: 282px;
+    background: $white-bgcolor;
+    border-top: 6px solid $green-color;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.06);
+    border-radius: 2px;
+
+
+    .card__wrap {
+      margin-bottom: 30px;
+      @include display(flex, space-between, center);
+
+      .card__icon {
+        position: relative;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: $green-color;
+        opacity: 0;
+        border-radius: 100px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 15px;
+          left: 7.5px;
+          width: 15px;
+          height: 1px;
+          background: $white-bgcolor;
+          border-radius: 20px;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 7.5px;
+          left: 14.5px;
+          width: 1px;
+          height: 15px;
+          background: $white-bgcolor;
+          border-radius: 20px;
+        }
+      }
+    }
+
+    .card__sphere {
+      font-family: $text-font;
+      font-size: 13px;
+      color: $green-color;
+      text-transform: uppercase;
+    }
+
+    .card__title {
+      margin: 12px 0 0;
+      font-family: $text-font;
+      font-size: 20px;
+      color: $title-color;
+      line-height: 1.45em;
+    }
+
+    .card__subtitle {
+      display: none;
+      font-family: $text-font;
+      font-size: 14px;
+      color: $title-color;
+    }
+
+    .card__list {
+      margin: 73px 0 32px;
+
+      .card__elem {
+        margin-bottom: 8px;
+        @include display(flex, flex-start, flex-end);
+
+        .card__text {
+          margin-left: 12px;
+          font-family: $text-font;
+          font-size: 14px;
+          color: $title-color;
+          line-height: 1em;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+
+          .card__img {
+            padding: 0 2px;
+          }
+        }
+      }
+    }
+
+    .card__price {
+      display: none;
+      margin: 67px 0 14px;
+      font-family: $text-font;
+      font-weight: 700;
+      font-size: 16px;
+      color: $title-color;
+    }
+
+    .card__btn {
+      display: block;
+      padding: 15px 0 13px;
+      font-family: $text-font;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: $white-bgcolor;
+      text-align: center;
+      background: $green-color;
+      border-radius: 3px;
+      transition: all 0.4s ease;
+
+      &:hover {
+        transition: all 0.4s ease;
+        color: $green-color;
+        background: rgba(37, 150, 9, 0.15);
+      }
+    }
+  }
+}
+
+.more-btn {
+  margin-top: 26px;
+  @include display(flex, center, center);
+
+  .more-btn__text {
+    margin-right: 10px;
+    font-family: $text-font;
+    font-weight: 700;
+    font-size: 14px;
+    color: $title-color;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $green-color;
+    }
+  }
+}

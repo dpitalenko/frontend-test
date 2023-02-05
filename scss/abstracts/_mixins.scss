@@ -1,0 +1,5 @@
+@mixin display($prop1, $prop2, $prop3) {
+  display: $prop1;
+  justify-content: $prop2;
+  align-items: $prop3;
+}
