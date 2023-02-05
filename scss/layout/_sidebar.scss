@@ -1,0 +1,129 @@
+@import "../base/typography";
+@import "../abstracts/mixins";
+
+.sidebar {
+  padding: 30px 15px;
+  max-width: 286px;
+  width: 100%;
+  background: $white-bgcolor;
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.06);
+  border-radius: 2px;
+}
+
+.career {
+  margin: 0 0 24px 2px;
+  @include display(flex, flex-start, flex-end);
+
+  .career__text {
+    margin-left: 12px;
+    font-family: $text-font;
+    font-size: 13px;
+    color: $green-color;
+    text-transform: uppercase;
+  }
+}
+
+.list {
+  position: relative;
+  padding: 23px 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 256px;
+    height: 1px;
+    background: $lightgray-color;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 256px;
+    height: 1px;
+    background: $lightgray-color;
+  }
+
+  .list__item {
+    margin-top: 4px;
+    margin-bottom: 26px;
+    padding-left: 13px;
+    padding-right: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .list__link {
+      @include display(flex, space-between, center);
+      cursor: pointer;
+
+      .list__text {
+        padding-right: 10px;
+
+        font-family: $text-font;
+        font-weight: 700;
+        font-size: 16px;
+        color: $title-color;
+        line-height: 1.25em;
+
+      }
+      &:hover .list__text {
+        color: $green-color;
+      }
+    }
+  }
+}
+
+.nested-list {
+  display: none;
+  padding-top: 10px;
+
+  .nested-list__link {
+    display: block;
+    width: 234px;
+    padding: 16px 0px 15px 12px;
+    font-family: $text-font;
+    font-size: 14px;
+    color: $title-color;
+    background: $white-bgcolor;
+    border-radius: 3px;
+
+    &:hover {
+      background: #F2F2F2;
+    }
+
+    &:active {
+      color: $green-color;
+      background: rgba(37,150,9, 0.15);
+    }
+  }
+}
+
+.nested-list_active {
+  display: block;
+}
+
+.sidebar__btn {
+  margin-top: 20px;
+  padding: 15px 0;
+  display: block;
+  font-family: $text-font;
+  font-weight: 700;
+  font-size: 14px;
+  color: $green-color;
+  text-transform: uppercase;
+  border: 1px solid rgba(37, 150, 9, 0.15);
+  border-radius: 3px;
+  text-align: center;
+  transition: all 0.5s ease;
+
+  &:hover {
+    transition: all 0.5s ease;
+    border: 1px solid $white-bgcolor;
+    background: rgba(37, 150, 9, 0.15);
+  }
+}

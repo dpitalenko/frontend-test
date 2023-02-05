@@ -1,0 +1,10 @@
+@import "./scss/base/reset";
+@import "./scss/pages/course";
+@import "./scss/layout/sidebar";
+
+
+.container {
+  max-width: 1192px;
+  width: 90%;
+  margin: 0 auto;
+}
